@@ -1,3 +1,5 @@
+Forked from Isaac Sukin's [SymSpell](https://github.com/IceCreamYou/SymSpell)
+
 An implementation of the Symmetric Delete spelling correction algorithm.
 It is fast and language-independent, but there is some setup cost to construct
 the dictionary.

@@ -16,7 +16,7 @@
  * http://www.opensource.org/licenses/LGPL-3.0
  */
 
-(function(window) {
+(function() {
 
 /**
  * Initializes a dictionary to perform spellcheck lookups.
@@ -37,11 +37,16 @@
  *   - SymSpell.Modes.ALL means return all suggestions with an edit distance
  *     smaller than the maximum
  */
-window.SymSpell = function(maxEditDistance, mode) {
+function SymSpell(maxEditDistance, mode) {
   this.maxEditDistance = maxEditDistance || 2;
   this.mode = typeof mode === 'undefined' ? SymSpell.Modes.ALL : mode;
   this.dictionary = {};
 };
+if(typeof window !== 'undefined'){
+    window.SymSpell = SymSpell;
+}else{
+    module.exports = SymSpell;
+}
 
 SymSpell.Modes = {
   TOP: 0,
@@ -358,4 +363,4 @@ function realEditDistance(dictItem, inputPermutation, input) {
   else return distance(dictItem.term, input);
 }
 
-})(window);
+})();

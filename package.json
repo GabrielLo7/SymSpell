@@ -2,11 +2,10 @@
   "name": "symspell",
   "version": "0.6.0",
   "description": "A JavaScript implementation of the Symmetric Delete spelling correction algorithm.",
-  "homepage": "https://github.com/IceCreamYou/SymSpell",
-  "bugs": "https://github.com/IceCreamYou/SymSpell/issues",
+  "homepage": "https://github.com/dongyuwei/SymSpell",
   "repository": {
     "type": "git",
-    "url": "git://github.com/IceCreamYou/SymSpell.git"
+    "url": "git@github.com:dongyuwei/SymSpell.git"
   },
   "keywords": [
     "symmetric",
@@ -16,6 +15,10 @@
     "dictionary"
   ],
   "author": "Isaac Sukin (http://www.isaacsukin.com/)",
+  "contributors" : [{
+    "name" : "Dong Yuwei",
+    "email" : "newdongyuwei@gmail.com"
+  }],
   "license": "LGPL-3.0",
   "readmeFilename": "README.md",
   "devDependencies": {
