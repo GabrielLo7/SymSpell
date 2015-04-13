@@ -1,3 +1,4 @@
+#! /usr/local/bin/node
 var SpellChecker = require('./symspell.js');
 
 var corrector = new SpellChecker(4, 2);

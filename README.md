@@ -12,3 +12,14 @@ and [algorithm](http://blog.faroo.com/2012/06/07/improved-edit-distance-based-sp
 version 1.6, originally written by Wolf Garbe.
 
 License: [LGPL 3.0](http://www.opensource.org/licenses/LGPL-3.0)
+
+
+```js
+var SpellChecker = require('symspell');
+
+var corrector = new SpellChecker(4, 2);
+corrector.addWords('awesome hallelujah different');
+console.log(corrector.lookup('awsom'));
+console.log(corrector.lookup('haleluah'));
+console.log(corrector.lookup('difrent'));
+```
