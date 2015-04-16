@@ -1,4 +1,5 @@
 #! /usr/local/bin/node
+var assert = require('assert');
 var SpellChecker = require('./symspell.js');
 
 function tokenizer(words){
@@ -9,10 +10,15 @@ var maxEditDistance = 4;
 
 var corrector = new SpellChecker(maxEditDistance);
 
-corrector.addWords('awesome hallelujah different 测试 你好', null, tokenizer);
+corrector.addWords('adapt adept adopt appraise apprise 暴露 毕恭毕敬', null, tokenizer);
 
-console.log(corrector.lookup('awsom'));
-console.log(corrector.lookup('haleluah'));
-console.log(corrector.lookup('difrent'));
-console.log(corrector.lookup('测'));
-console.log(corrector.lookup('你坏'));
+console.log(corrector.lookup('adept'));
+console.log(corrector.lookup('apprese'));
+
+assert.equal(corrector.lookup('adept').length, 3);
+
+console.log(corrector.lookup('曝露'));
+console.log(corrector.lookup('必恭必敬'));
+
+assert.equal(corrector.lookup('曝露')[0].term, '暴露')
+assert.equal(corrector.lookup('必恭必敬')[0].distance, 2)
